@@ -20,7 +20,9 @@ if (storybookEnv == null) {
       withScreenshot = <WithScreenshot>ReactWithScreenshot;
       break;
     default:
-      throw new Error(`storybook-chrome-screenshot does not support "${storybookEnv}".`);
+      withScreenshot = () => {
+        throw new Error(`storybook-chrome-screenshot does not support "${storybookEnv}".`);
+      }
   }
 }
 
